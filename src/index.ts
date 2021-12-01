@@ -2,6 +2,9 @@ import express from 'express'
 
 let app = express()
 
+// body-parser는 내장되어있음. json 파싱하기 위해서 설정만 추가
+app.use(express.json())
+
 // express에는 json data를 parsing하는 module 내장 (body-parser library 내장)
 // 하지만 json만 되고 x-www-form-urlencoded를 parsing하기 위해서 아래 코드를 입력해 확장해야 함
 app.use(express.urlencoded({
@@ -42,6 +45,22 @@ app.post('/hello33', (req, res) => {
 app.post('/hello4', (req, res) => {
     const {name} = req.body
     res.send(`Hello ${name}`)
+})
+
+// response - json data 보내기
+app.post('/hello5', (req, res) => {
+    const result = {
+        code: 0,
+        message: 'success'
+    }
+    res.send(result)
+})
+
+// request - json data 받기
+app.post('/hello6', (req, res) => {
+    console.log(req.body)
+    const result = req.body
+    res.send(result)
 })
 
 app.listen(8080, () => {
