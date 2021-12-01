@@ -34,4 +34,4 @@
     - input에 담긴 data들은 *x-www-form-urlencoded 방식*으로 body에 담겨서 전송
     - express에서 x-www-form-urlencoded로 온 미디어 타입 파싱 불가능하여 코드 추가 필요
     - postman에서 POST로 테스트시, body -> x-www-form-urlencoded 선택하여 key와 value값 적어주면 됨
-    - x-www-form-urlencoded : 내가 body에 보내는 data type이 form 방식이라는 것 시
+    - x-www-form-urlencoded : 내가 body에 보내는 data type이 form 방식이라는 것 명시
