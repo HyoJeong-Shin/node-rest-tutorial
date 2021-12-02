@@ -1,5 +1,6 @@
 import express from 'express'
-import {createConnection} from "typeorm"    // db 연결
+import {createConnection} from "typeorm" // db 연결
+import router from "./router/index"
 
 let app = express()
 
@@ -63,6 +64,9 @@ app.post('/hello6', (req, res) => {
     const result = req.body
     res.send(result)
 })
+
+// /api를 처리해줄 부분
+app.use('/api', router)
 
 createConnection().then(connection => {         // db연결
     app.listen(8080, () => {
