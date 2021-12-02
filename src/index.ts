@@ -64,8 +64,8 @@ app.post('/hello6', (req, res) => {
     res.send(result)
 })
 
-createConnection().then(connection => {     // db 연결
+createConnection().then(connection => {         // db연결
     app.listen(8080, () => {
-        console.log('server is listening 8080')
+        console.log('server is listening 8080');
     })
 })
